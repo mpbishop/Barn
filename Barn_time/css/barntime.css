@@ -1,0 +1,82 @@
+/*This is my css file*/
+body {
+	min-width: 996px;
+}
+
+
+.gamecontainer {
+	padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 147px;
+    display: block;
+	width: 768px;
+	height: 432px;
+	background-image: url('../images/bg_3.png');
+	z-index: 1;
+}
+
+
+.cover {
+  position: fixed;
+  width: 208px;
+  height: 169px;
+  margin-top: 263px;
+  margin-left:236px;
+  background-color: black;
+  z-index: 1;
+
+}
+
+
+.left_gate {
+  position: absolute;
+  background-image: url('../images/door_left.png');
+  bottom: 0; right: 50%; left: 0; top: 0;
+  
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.right_gate {
+  position: absolute;
+  background-image: url('../images/door_right.png');
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  top: 0;
+  
+ -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.left_gate_clicked {
+ transform: translate(-100px);
+ -ms-transform: translate(-100px); /* IE 9 */
+ -webkit-transform: translate(-100px); /* Safari and Chrome */
+}
+
+.right_gate_clicked {
+  transform: translate(100px);
+  -ms-transform: translate(100px); /* IE 9 */
+  -webkit-transform: translate(100px); /* Safari and Chrome */
+}
+
+#animalNameContainer {
+  font-size: 55px;
+  color: rgb(8, 177, 243);
+  font-family: 'Gorditas', cursive;
+  margin-right: 25px;
+  padding-top: 12px;
+  text-align: right;
+}
+
+
+

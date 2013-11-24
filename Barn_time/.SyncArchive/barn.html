@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Barn Animals</title>
+<link href="css/barntime.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+	<div class="gamecontainer">
+		<bottom>
+			<div class="cover">
+  				<div class="left_gate"></div>
+ 				<div class="right_gate"></div>
+				<img src="images/cow.png">
+			</div>
+    	</button>
+	</div>
+
+	<script>
+		$(function() {
+  			var box = $('.left_gate');
+  			var button = $('.left_gate button');
+  			button.on('click', function(){
+   			box.toggleClass('active');
+    		if(box.hasClass('active'))
+     		 button.text('');
+    			else
+      		button.text('');
+  		});
+	});
+
+		$(function() {
+  			var box = $('.right_gate');
+  			var button = $('.right_gate button');
+  			button.on('click', function(){
+   			box.toggleClass('active');
+    		if(box.hasClass('active'))
+     		 button.text('');
+    			else
+      		button.text('');
+  		});
+	});
+	</script>
+
+
+</body>
+
+</html>

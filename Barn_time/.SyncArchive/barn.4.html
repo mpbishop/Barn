@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Barn Animals</title>
+<link href="css/barntime.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Gorditas' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+
+	<div class="gamecontainer">
+			<div class="cover">
+  			<div id="leftGate" class="left_gate gate" onclick="onGateClick()"></div>
+ 				<div id="rightGate" class="right_gate gate" onclick="onGateClick()"></div>
+        <img id="animal" src="" onclick="onGateClick()">
+			</div>
+
+      <div id="animalNameContainer">
+      </div>
+	</div>
+
+	<script>
+  var animals = ["cow","horse","sheep"];
+  var animalOffset = 0;
+
+  function onGateClick() {
+    var gates = $(".gate");
+    var animalSrc = "images/" + animals[animalOffset] + ".png";
+
+    $("#animal").attr("src",animalSrc);
+
+    //for all the gates open a gate;
+    //$.forEach(gates, function(gate) {
+    //   openGate(gate);
+    //})
+
+    var left_gate = gates[0];
+    var right_gate = gates[1];
+
+    openGate(left_gate,animalOffset);
+    openGate(right_gate,animalOffset);
+
+    var gatesAreClosed = !$(left_gate).hasClass("left_gate_clicked"); 
+
+    if (gatesAreClosed) {
+      animalOffset = (animalOffset + 1) % animals.length;
+    } else {
+      showAnimalName();
+      playAnimalSound();
+    }
+  }
+
+  function openGate(gate) {
+    var gate = $(gate);
+    if (gate.hasClass("left_gate")) {
+      gate.toggleClass("left_gate_clicked");
+    } else if (gate.hasClass("right_gate")) {
+      gate.toggleClass("right_gate_clicked");
+    }
+  }
+
+  function showAnimalName() {
+    var animalName = animals[animalOffset];
+    $("#animalNameContainer").html(animalName);
+  }
+
+  function playAnimalSound() {
+    var animalName = animals[animalOffset];
+    var animalSound = animalName + ".mp3";
+
+  }
+	</script>
+</body>
+
+</html>
